@@ -16,11 +16,15 @@ describe('When the app is running',()=>{
         });
     })
 
-    it('should load a list',()=>
+    it('should have a defined list of comments',()=>
     {
+        expect(scope.comments).toBeDefined();
+    });
 
-        expect(scope.list()).toBeDefined();       
-
+    it('should allow comments to be added to the list', () => {
+        const comment = "Angular js DevOps";
+        scope.add(comment);
+        expect(scope.comments.length).toBe(1);        
     });
 
     describe('When adding a comment', () => {
