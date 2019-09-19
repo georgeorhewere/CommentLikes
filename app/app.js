@@ -7,4 +7,13 @@ angular.module('commentApp',[])
             $scope.comments.push(comment);     
         }
     }
+
+    $scope.like = (id) =>{
+
+    }
+    $scope.getLikes = (id) => {
+
+    }
+
+    
 });

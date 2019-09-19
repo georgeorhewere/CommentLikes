@@ -35,13 +35,22 @@ describe('When the app is running',()=>{
         scope.add(comment);
         expect(scope.comments.length).toBe(0);        
     });
-
     it('should not add null', () => {        
         scope.add();
         expect(scope.comments.length).toBe(0);                
     });
 
-    describe('When adding a comment', () => {
+
+    describe('When a comment is liked the like count should increase', () => 
+    {
+        it('should allow user like', () => 
+        {
+            let commentId = 1
+            scope.like(commentId);
+            expect(scope.getLikes(commentId)).toBe(1);            
+        });    
+
+
         
     });
 
