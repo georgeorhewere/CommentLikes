@@ -22,9 +22,23 @@ describe('When the app is running',()=>{
     });
 
     it('should allow comments to be added to the list', () => {
-        const comment = "Angular js DevOps";
+        let comment = "Angular js DevOps";
         scope.add(comment);
-        expect(scope.comments.length).toBe(1);        
+        expect(scope.comments.length).toBe(1);
+        comment = "Tech Lead is a fun job to do";
+        scope.add(comment);
+        expect(scope.comments.length).toBe(2);        
+    });
+
+    it('should not add empty strings', () => {
+        let comment = "";
+        scope.add(comment);
+        expect(scope.comments.length).toBe(0);        
+    });
+
+    it('should not add null', () => {        
+        scope.add();
+        expect(scope.comments.length).toBe(0);                
     });
 
     describe('When adding a comment', () => {
