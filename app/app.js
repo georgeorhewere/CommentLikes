@@ -18,19 +18,17 @@ angular.module('commentApp',[])
         return  selectedComment.getLikes();       
     }
 
-    class commentObject {
-        constructor(message) {
+    var commentObject = function(message){        
             this.message = message;
             this.likes = 0;
-            return {
-                increment: () => {
-                    this.likes += 1;
-                },
-                getLikes: () => {
-                    return this.likes;
-                }
-            };
-        }
     }
+
+    commentObject.prototype.increment = function(){
+                this.likes += 1;     };
+
+    commentObject.prototype.getLikes = function(){
+        return this.likes;  }
+
+
     
 });
