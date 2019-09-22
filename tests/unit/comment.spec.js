@@ -45,9 +45,17 @@ describe('When the app is running',()=>{
     {
         it('should allow user like', () => 
         {
-            let commentId = 1
-            scope.like(commentId);
-            expect(scope.getLikes(commentId)).toBe(1);            
+            const comment = "Tech Lead is a fun job to do";
+            scope.add(comment);            
+            const anothercomment = "Im going for senior software engineer"
+            scope.add(anothercomment);
+            scope.like(0);
+            scope.like(1);
+            scope.like(0);
+            scope.like(1);
+            scope.like(1);
+            expect(scope.getLikes(0)).toBe(2);            
+            expect(scope.getLikes(1)).toBe(3);
         });    
 
 
